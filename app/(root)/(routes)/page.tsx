@@ -14,13 +14,7 @@ import { useEffect } from "react";
     }
   },[isOpen,onOpen])
 
-  return (
-    <div className="p-4">
-        <div className="p-4">
-          Root page
-        </div>
-    </div>
-  )
+  return null
 }
 
 export default SetupPage
