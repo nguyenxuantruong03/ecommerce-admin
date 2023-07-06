@@ -1,5 +1,6 @@
 "use client"
 
+import { AlertModal } from "@/components/modals/alert-modal"
 import { StoreModal } from "@/components/modals/sotre-modal"
 
 import {useEffect,useState} from "react"
