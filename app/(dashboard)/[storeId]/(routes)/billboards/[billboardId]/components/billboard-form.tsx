@@ -61,6 +61,9 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
   const onSubmit = async (data: BillboardFormValues) => {
     try {
       setLoading(true);
+      //inittialData có nghĩa là khi dữ diệu ban đầu có nó sẽ đổi nut button thành save change 
+     /* Khối mã chịu trách nhiệm thực hiện yêu cầu HTTP để cập nhật bảng quảng cáo hiện có
+      hoặc tạo bảng quảng cáo mới dựa trên giá trị của `initialData`. */
       if (initialData) {
         await axios.patch(`/api/${params.storeId}/billboards/${params.billboardId}`, data);
       } else {
@@ -99,7 +102,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
       onConfirm={onDelete}
       loading={loading}
     />
-    
+    {/* update and create */}
      <div className="flex items-center justify-between">
         <Heading title={title} description={description} />
         {initialData && (
@@ -113,6 +116,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
           </Button>
         )}
       </div>
+
       <Separator />
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
